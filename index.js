@@ -1,8 +1,21 @@
 
+var buttons=document.querySelectorAll(".drum");
 
-document.querySelector("button").addEventListener(click,clickHandle);
+
+for(var i=0;i<buttons.length;i++){
+    buttons[i].addEventListener("click",clickHandle);
+}
+
 
 
 function clickHandle(){
-    alert("I got clicked");
+    this.style.color="black"
+    
 }
+
+
+
+
+
+//var sound= new Audio("sounds/crash.mp3");
+//    sound.play();
