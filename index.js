@@ -11,12 +11,14 @@ for(var i=0;i<buttons.length;i++){
 function clickHandle(){
     var buttonInnerHTML=this.innerHTML;
     makesound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML)
 }
 
 
 
 document.addEventListener("keydown",function(event){
     makesound(event.key)
+    buttonAnimation(event.key)
     
 });
 
@@ -51,9 +53,18 @@ function makesound(key){
         default:
             break;
     }
-    
+
+
+}
 
 
 
+function buttonAnimation(currentKey){
+    var activeButton=  document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
 
+    console.log(activeButton)
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");   
+    },500)
 }
